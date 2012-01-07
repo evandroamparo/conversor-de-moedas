@@ -8,20 +8,26 @@ namespace ConversorDeMoedas
    {
       protected void Page_Load(object sender, EventArgs e)
       {
-         rvValor.MinimumValue = (0.01).ToString();
+
       }
 
       protected void btnConverter_Click(object sender, EventArgs e)
       {
+         if (Page.IsPostBack && !Page.IsValid)
+            return;
+
          try
          {
-            var moedaOrigem = (Currency)Enum.Parse(typeof(Currency), ddlOrigem.SelectedValue);
-            var moedaDestino = (Currency)Enum.Parse(typeof(Currency), ddlDestino.SelectedValue);
+            string valorOrigem = txtValor.Text.Replace(",", CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator);
+            Currency moedaOrigem = (Currency)Enum.Parse(typeof(Currency), ddlOrigem.SelectedValue);
+            Currency moedaDestino = (Currency)Enum.Parse(typeof(Currency), ddlDestino.SelectedValue);
 
             CurrencyConvertor proxy = new CurrencyConvertor();
-            var taxaDeCambio = proxy.ConversionRate(moedaOrigem, moedaDestino);
-            var resultado = ConversorMoeda.Converter(Convert.ToDouble(txtValor.Text), taxaDeCambio);
-            lblResultado.Text = string.Format("{0:n2} {1}", resultado, moedaDestino);
+            double taxaDeCambio = proxy.ConversionRate(moedaOrigem, moedaDestino);
+            double resultado = ConversorMoeda.Converter(Convert.ToDouble(valorOrigem), taxaDeCambio);
+
+            lblResultado.Text = string.Format("{0:n2} {1} = {2:n2} {3}", 
+                                              txtValor.Text, ddlOrigem.Text, resultado, ddlDestino.Text);
             lblResultado.Visible = true;
          }
          catch (Exception)
