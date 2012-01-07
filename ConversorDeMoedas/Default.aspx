@@ -18,14 +18,6 @@
       ErrorMessage="Campo obrigatório." Display="Dynamic"
       ControlToValidate="txtValor" Font-Bold="False" ForeColor="Red" 
    SetFocusOnError="True"></asp:RequiredFieldValidator>
-   <asp:CompareValidator ID="cvValor" runat="server" 
-   ControlToValidate="txtValor" Display="Dynamic"
-      ErrorMessage="Deve ser um número real." Operator="DataTypeCheck" 
-      Type="Double" ForeColor="Red" SetFocusOnError="True"></asp:CompareValidator>
-   <asp:RangeValidator ID="rvValor" runat="server" 
-   ErrorMessage="Deve ser um número positivo." ControlToValidate="txtValor" 
-   ForeColor="Red" MaximumValue="10000000000" SetFocusOnError="True" 
-   Type="Double" MinimumValue="0" Display="Dynamic"></asp:RangeValidator>
    <br />
    <label>
       Da moeda:</label>
