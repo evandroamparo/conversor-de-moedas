@@ -8,7 +8,10 @@
       Sobre
    </h2>
    <p>
-      Sistema de conversão de moedas.
+      Conversor de moedas.
+   </p>
+   <p>
+      Use este aplicativo para realizar cálculos  de conversão entre moedas de diversos países.
    </p>
    <h3>
       Aviso</h3>
