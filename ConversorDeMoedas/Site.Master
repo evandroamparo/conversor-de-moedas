@@ -1,0 +1,42 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="ConversorDeMoedas.SiteMaster"
+   EnableViewState="False" %>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head runat="server">
+   <title></title>
+   <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+   <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+   </asp:ContentPlaceHolder>
+</head>
+<body>
+   <form runat="server">
+   <div class="page">
+      <div class="header">
+         <div class="title">
+            <h1>
+               Conversor de Moedas
+            </h1>
+         </div>
+         <div class="clear hideSkiplink">
+            <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false"
+               IncludeStyleBlock="false" Orientation="Horizontal">
+               <Items>
+                  <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Início" />
+                  <asp:MenuItem NavigateUrl="~/About.aspx" Text="Sobre" />
+               </Items>
+            </asp:Menu>
+         </div>
+      </div>
+      <div class="main">
+         <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+      </div>
+      <div class="clear">
+      </div>
+   </div>
+   <div class="footer">
+      (c) 2012 <a href="http://blog.evandroamparo.com/" target="blank">Evandro da Silva Amparo</a>
+   </div>
+   </form>
+</body>
+</html>
