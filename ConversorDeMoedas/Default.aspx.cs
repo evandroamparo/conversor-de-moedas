@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using ConversorDeMoedas.ServicoConversao;
 
 namespace ConversorDeMoedas
@@ -7,7 +8,7 @@ namespace ConversorDeMoedas
    {
       protected void Page_Load(object sender, EventArgs e)
       {
-         
+         rvValor.MinimumValue = (0.01).ToString(CultureInfo.InvariantCulture);
       }
 
       protected void btnConverter_Click(object sender, EventArgs e)

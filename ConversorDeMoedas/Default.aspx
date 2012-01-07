@@ -25,7 +25,7 @@
    <asp:RangeValidator ID="rvValor" runat="server" 
    ErrorMessage="Deve ser um número positivo." ControlToValidate="txtValor" 
    ForeColor="Red" MaximumValue="10000000000" SetFocusOnError="True" 
-   Type="Double" MinimumValue="0,01"></asp:RangeValidator>
+   Type="Double"></asp:RangeValidator>
    <br />
    <label>
       Da moeda:</label>
